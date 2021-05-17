@@ -1,0 +1,54 @@
+Program -> ExtDefList
+ExtDefList -> ExtDef ExtDefList
+ExtDefList -> Epsilon
+ExtDef -> Specifier ExtDecList SEMI
+ExtDef -> Specifier FunDec CompSt
+ExtDef -> Specifier SEMI
+ExtDecList -> VarDec
+ExtDecList -> VarDec COMMA ExtDecList
+Specifier -> TYPE
+TYPE -> int
+TYPE -> float
+TYPE -> char
+VarDec -> ID
+VarDec -> VarDec LB NUM RB
+FunDec -> ID LP VarList RP
+FunDec -> ID LP RP
+VarList -> ParamDec COMMA VarList
+VarList -> ParamDec
+ParamDec -> Specifier VarDec
+CompSt -> LC DefList StmtList RC
+StmtList -> Stmt StmtList
+StmtList -> Epsilon
+Stmt -> Exp SEMI
+Stmt -> CompSt
+Stmt -> RETURN Exp SEMI
+Stmt -> IF LP Exp RP Stmt
+Stmt -> IF LP Exp RP Stmt ELSE Stmt
+Stmt -> WHILE LP Exp RP Stmt
+DefList -> Def DefList
+DefList -> Epsilon
+Def -> Specifier DecList SEMI
+DecList -> Dec
+DecList -> Dec COMMA DecList
+Dec -> VarDec
+Dec -> VarDec ASSIGNOP Exp
+Exp -> Exp ASSIGNOP Exp
+Exp -> Exp AND Exp
+Exp -> Exp OR Exp
+Exp -> Exp RELOP Exp
+Exp -> Exp PLUS Exp
+Exp -> Exp MINUS Exp
+Exp -> Exp STAR Exp
+Exp -> Exp DIV Exp
+Exp -> LP Exp RP
+Exp -> MINUS Exp
+Exp -> NOT Exp
+Exp -> ID LP Args RP
+Exp -> ID LP RP
+Exp -> Exp LB Exp RB
+Exp -> Exp DOT ID
+Exp -> ID
+Exp -> NUM
+Args -> Exp COMMA Args
+Args -> Exp
