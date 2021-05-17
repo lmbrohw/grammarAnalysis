@@ -1,0 +1,14 @@
+int int
+float float
+double double
+while while
+if if
+else else
+return return
+double double
+true true
+false false
+struct struct
+char char
+include include
+

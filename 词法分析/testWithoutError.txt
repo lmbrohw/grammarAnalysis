@@ -1,0 +1,39 @@
+int main(){
+int a;
+int a,b;
+int a = 1;
+int b = 027;/*八进制*/
+int c = 0x2e1;/*十六进制*/
+double d=2.3E+3;/*带指数浮点数*/
+iqt map[10];
+a = b + 1;
+a = b + c;
+a = b * c;
+a = b / c;  
+a = (b==c);
+a = (b>c);
+a = (b<c);
+a = (b&&c);
+a = (b||c);
+a = (!b);
+if(a==b)
+{
+}
+while(a==b)
+{
+
+}
+put(a);
+get(a);
+if(a<>b)
+{
+
+}
+else
+{
+}
+return 0;
+}
+struct student
+{
+};
